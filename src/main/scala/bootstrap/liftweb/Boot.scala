@@ -25,6 +25,14 @@ import code.webservice._
 class Boot extends Loggable  {
 	def boot {
 		MongoConfig.init
+		
+		/*val md1 = CvObjectDoc.createRecord
+		  .title("init")
+		  .save
+		val md2 = FriendDoc.createRecord
+		  .firstname("init")
+	  	  .save */
+		
 		LiftRules.addToPackages("code")
 		
 		/************************ FILE UPLOAD *******************************/

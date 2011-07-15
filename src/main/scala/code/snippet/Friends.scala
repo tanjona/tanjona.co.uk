@@ -19,6 +19,10 @@ package code {
 						 			  AttrBindParam("img",Props.get("social.folder", "")+ p.name.toString + Props.get(p.name +".image.format", ".jpg"), "src"))			
 					)
 			}
+			def stickerNews = {
+				val newsDoc =  CvObjectDoc where (_.category eqs "sticker") fetch()
+				".list-item *" #> newsDoc.map(d => ".link *" #> d.title)
+			}
 		}
 	}
 }

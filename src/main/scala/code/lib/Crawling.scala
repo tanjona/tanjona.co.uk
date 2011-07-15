@@ -25,7 +25,7 @@ package code {
 
 			}
 
-		
+			
 			
 			def parseFile() = {
 				val lines = scala.io.Source.fromFile(urlFile).mkString

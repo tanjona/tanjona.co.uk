@@ -7,7 +7,7 @@ package code {
 		import com.foursquare.rogue.Rogue._
 		import Helpers._
 		import model._
-
+		
 		class Experiencecv {
 		
 			def experiences(xhtml: NodeSeq): NodeSeq = 
@@ -37,7 +37,7 @@ package code {
 								</p>
 							</div>
 							<div class="trail-text" style="display: none; ">
-								<a href="#" class="link-text">  Contact<strong> me</strong> to find out</a>
+								<a href="#" class="link-text">  Try<strong> me</strong></a>
 							</div>
 							<a href="#" class="link-image ">
 								<img src="/images/tj.jpg" width="460" height="356" alt="Tanjona Julien" class=""/>

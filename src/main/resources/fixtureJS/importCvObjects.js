@@ -312,7 +312,7 @@
 			"tools" : ""
 		}
 	],
-  "title" : "This website is using Scala !",
+  "title" : "This website is using Scala!",
   "layout" :"mid-col",
   "category" : "sticker",
   "startingDate" : "",
@@ -334,7 +334,7 @@
 			"tools" : ""
 		}
 	],
-  "title" : "This website is using NoSQL, All the content is provide from a MongoDB storage!",
+  "title" : "All the content is provide by a MongoDB storage!",
   "layout" :"mid-col",
   "category" : "sticker",
   "startingDate" : "",

@@ -23,8 +23,8 @@ package code {
 			
 			def Weather = 
 				".weather-icon [src]" #> ("http://www.google.com/" + MapResult("icon")) &
-				 ".temp-high *" #> (FtoC(MapResult("high").toInt)+ " C") &
-				 ".temp-low *" #> (FtoC(MapResult("low").toInt) + " C")
+				 ".temp-high *" #> (FtoC(MapResult("high").toInt)+ "°C") &
+				 ".temp-low *" #> (FtoC(MapResult("low").toInt) + "°C")
 			
 			def breadcrumb = "*" #> {
 				val breadcrumbs: List[Loc[_]] =

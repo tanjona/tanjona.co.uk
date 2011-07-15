@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/crumb.css" media="all" />
 	<script id="jquery" src="/classpath/jquery.js" type="text/javascript"></script>
 	<script id="json" src="/classpath/json.js" type="text/javascript"></script>
-
+	<script src="/js/ticker.js" type="text/javascript"></script> 
 	<title>tanjona.co.uk</title>
 </head>
 <body class="network-front">
@@ -41,6 +41,21 @@
 	_gaq.push(['_trackPageview']);
 
 	(function() {
+		$('#ticker').list_ticker({
+				speed:3500,
+		        effect:'fade',
+		        run_once:false
+		})
+		
+		$("div.trail-text").attr("style", "display: none;"); 
+		  if ($(".pixie,div.trail-text")) { 
+		   
+		   	$(".pixie,div.trail-text").hover( 
+			    function() { $(this).find("div.trail-text").slideDown("fast"); }, 
+			    function() { $(this).find("div.trail-text").slideUp("fast"); } 
+			);
+		  };
+		
 		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
