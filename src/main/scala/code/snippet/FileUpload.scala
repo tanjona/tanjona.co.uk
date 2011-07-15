@@ -10,7 +10,7 @@ import net.liftweb.common._
 import java.util.Date
 import code.lib._
 import Helpers._
-
+// source : https://github.com/Shadowfiend/lift-ajax-file-upload-example
 class FileUpload {
 	def fileUploadForm(form:NodeSeq) : NodeSeq = {
 		var fileHolder: Box[FileParamHolder] = Empty
@@ -18,13 +18,18 @@ class FileUpload {
 		def handleFile() = {
 			// Do something with the file.
 			printBox(fileHolder)
-
+			val authorizedList = List("text/plain")
 			fileHolder.map { holder => {
-				
-					val lines = scala.io.Source.fromInputStream(holder.fileStream).mkString 
-					val blockLines = lines.split("\\n")
-					blockLines.map(n => printYellow(n))
-					Alert(holder.mimeType +" - " + holder.length + ": well done!")
+				    (holder.length, holder.mimeType) match {
+					 case (length, _) if length > 50000 => 	Alert("file too large :" + length)
+					 case (_, mime) if !authorizedList.contains(mime) => 	Alert("type file not supported :" + mime)
+					 case (_,_) => Alert(holder.mimeType +" - " + holder.length + ": well done!")
+					}
+					//val lines = scala.io.Source.fromInputStream(holder.fileStream).mkString
+					 
+					//val blockLines = lines.split("\\n")
+					//blockLines.map(n => printYellow(n))
+					//Alert(holder.mimeType +" - " + holder.length + ": well done!")
 				}
 			} openOr {
 				Alert("Well *that* upload failed...")

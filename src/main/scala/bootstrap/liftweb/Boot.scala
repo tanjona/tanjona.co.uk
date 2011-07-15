@@ -28,6 +28,7 @@ class Boot extends Loggable  {
 		LiftRules.addToPackages("code")
 		
 		/************************ FILE UPLOAD *******************************/
+		// https://github.com/Shadowfiend/lift-ajax-file-upload-example
 	    // In cases where we have an AJAX request for IE with an uploaded file, we
 	    // assume we served through an iframe (a fairly safe assumption) and serve
 	    // up the response with a content type of text/plain so that IE does not

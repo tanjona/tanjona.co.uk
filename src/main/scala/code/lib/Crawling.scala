@@ -5,8 +5,8 @@ package code {
 		import org.ccil.cowan.tagsoup.jaxp.SAXFactoryImpl
 		import scala.xml._
 
-		class NaturalCrawl(urlFile: String) {
-			if (urlFile == null) throw new Exception("URL is null")
+		class NaturalCrawl(urlFile: String = "") {
+		
 
 			val parserFactory = new org.ccil.cowan.tagsoup.jaxp.SAXFactoryImpl
 			val parser = parserFactory.newSAXParser()
@@ -17,7 +17,7 @@ package code {
 				try {
 					val source = new org.xml.sax.InputSource(url)
 					xml = adapter.loadXML(source, parser)
-					mainTask(url);
+					
 				}
 				catch {
 					case e => println("url down => " + url)
@@ -25,12 +25,28 @@ package code {
 
 			}
 
+			def FtoC(Tf:Int) = (Tf-32) * 5 / 9
+			
 			def parseFile() = {
 				val lines = scala.io.Source.fromFile(urlFile).mkString
 				val decoup = lines.split("\\n")
 				decoup.map(n => parseUrl(n))
 			}
 
+			def weatherGoogle(town:String):Seq[String] = {
+				try {
+					parseUrl("http://www.google.com/ig/api?weather=" + town)
+					val foreCast = (xml \\ "forecast_conditions")(0)
+					val img = ((foreCast \\ "icon")(0) \ "@data").text
+					val high = ((foreCast \\ "high")(0) \ "@data").text.trim.toInt
+					val low = ((foreCast \\ "low")(0) \ "@data").text.trim.toInt
+					List(img, FtoC(high) + " C", FtoC(low) + " C")
+				}
+				catch {
+					case e => List(e.getMessage)
+				}
+			}
+			
 			def mainTask(url: String) = {
 				var tmp = ""
 				try {

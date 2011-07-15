@@ -10,13 +10,19 @@ package code {
 		import _root_.java.text.SimpleDateFormat
 		import _root_.java.util.Locale
 		import Helpers._
+		import lib._
 		
-
-		class Tools {
+		object Tools {
 			lazy val formatString = "d MMMM yyyy"
+			val crawl = new NaturalCrawl
+			val listResult = crawl.weatherGoogle("London")
+			
 			def DateNow = "#time *" #> (new SimpleDateFormat(formatString, Locale.ENGLISH) format new Date())
 			
-			def Weather = "#weather *" #> ""
+			def Weather = 
+				".weather-icon [src]" #> ("http://www.google.com/" + listResult(0)) &
+				 ".temp-high *" #> listResult(1) &
+				 ".temp-low *" #> listResult(2)
 			
 			def breadcrumb = "*" #> {
 				val breadcrumbs: List[Loc[_]] =
@@ -26,7 +32,11 @@ package code {
 					} yield loc
 				"li *" #> breadcrumbs.map{
 					loc => ".link *" #> loc.title &
-						".link [href]" #> loc.createDefaultLink.getOrElse(Text("#"))}}
+						".link [href]" #> loc.createDefaultLink.getOrElse(Text("#"))
+				}
+			}
+			
+			
 			
 		}
 

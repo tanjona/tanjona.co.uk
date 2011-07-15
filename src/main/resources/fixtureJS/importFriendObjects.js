@@ -29,6 +29,10 @@
 			{
 				"name":"linkedin",
 				"id":"tanjona"
+			},
+			{
+				"name":"github",
+				"id" : "tanjona"
 			}
 	 	]
 }*
