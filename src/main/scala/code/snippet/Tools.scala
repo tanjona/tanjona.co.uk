@@ -15,14 +15,16 @@ package code {
 		object Tools {
 			lazy val formatString = "d MMMM yyyy"
 			val crawl = new NaturalCrawl
-			val listResult = crawl.weatherGoogle("London")
+			val MapResult = crawl.weatherGoogle("London")
+			
+			private def FtoC(Tf:Int) = (Tf-32) * 5 / 9
 			
 			def DateNow = "#time *" #> (new SimpleDateFormat(formatString, Locale.ENGLISH) format new Date())
 			
 			def Weather = 
-				".weather-icon [src]" #> ("http://www.google.com/" + listResult(0)) &
-				 ".temp-high *" #> listResult(1) &
-				 ".temp-low *" #> listResult(2)
+				".weather-icon [src]" #> ("http://www.google.com/" + MapResult("icon")) &
+				 ".temp-high *" #> (FtoC(MapResult("high").toInt)+ " C") &
+				 ".temp-low *" #> (FtoC(MapResult("low").toInt) + " C")
 			
 			def breadcrumb = "*" #> {
 				val breadcrumbs: List[Loc[_]] =

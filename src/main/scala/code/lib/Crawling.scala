@@ -25,7 +25,7 @@ package code {
 
 			}
 
-			def FtoC(Tf:Int) = (Tf-32) * 5 / 9
+		
 			
 			def parseFile() = {
 				val lines = scala.io.Source.fromFile(urlFile).mkString
@@ -33,17 +33,14 @@ package code {
 				decoup.map(n => parseUrl(n))
 			}
 
-			def weatherGoogle(town:String):Seq[String] = {
+			def weatherGoogle(town:String) = {
 				try {
 					parseUrl("http://www.google.com/ig/api?weather=" + town)
-					val foreCast = (xml \\ "forecast_conditions")(0)
-					val img = ((foreCast \\ "icon")(0) \ "@data").text
-					val high = ((foreCast \\ "high")(0) \ "@data").text.trim.toInt
-					val low = ((foreCast \\ "low")(0) \ "@data").text.trim.toInt
-					List(img, FtoC(high) + " C", FtoC(low) + " C")
+					val foreCast = (xml \\ "forecast_conditions")(0).child
+					foreCast map { x => (x.label -> (x \ "@data").text ) } toMap
 				}
 				catch {
-					case e => List(e.getMessage)
+					case e => Map("error" -> e.getMessage)
 				}
 			}
 			
