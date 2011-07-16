@@ -424,7 +424,7 @@
 		}
 	],
   "title" : "Recenlty moved to the UK",
-  "layout" :"Red phone both, fish&chips and Tea",
+  "layout" :"Red phone both, fish & chips and Tea",
   "category" : "aboutMe",
   "startingDate" : "",
   "endingDate" : "",
@@ -437,3 +437,32 @@
   "type" : "infos"
 } *
 
+{
+  "activities" : 
+	[
+		{
+			"content" : "To get into the midle of project: to aknowledege it and finally to be able to improve it",
+			"tools" : ""
+		},
+		{
+			"content" : "To write code which can be reuse at will",
+			"tools" : ""
+		},	
+		{
+			"content" : "Learn it, Try it & Share it",
+			"tools" : ""
+		}	
+	],
+  "title" : "I like",
+  "layout" :"",
+  "category" : "like",
+  "startingDate" : "",
+  "endingDate" : "",
+  "pictureCompany" : "",
+  "websiteCompany" : "",
+  "company" : "",
+  "position" : "",
+  "user" : "",
+  "location": "UK",
+  "type" : "infos"
+} *

@@ -77,6 +77,22 @@ package code {
 						)
 					)
 			}
+			
+			def ilike(xhtml: NodeSeq): NodeSeq =
+			{
+				val ilikeDocs = CvObjectDoc  where (_.category eqs "like") fetch ()
+					ilikeDocs.flatMap((exp: CvObjectDoc) => bind ("e", xhtml, 
+				           "title" -> exp.title,
+							"activities" -> exp.activities.value.flatMap((act:Activity) => bindActivitiesLike(act))
+						)
+					)
+			}
+			
+			def bindActivitiesLike(act:Activity): NodeSeq =
+				<li class="l1 news">
+					<a href="" class="link-text">{act.content}</a>
+				</li>
+			
 		}
 	}
 }
