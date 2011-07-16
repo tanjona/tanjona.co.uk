@@ -312,7 +312,7 @@
 			"tools" : ""
 		}
 	],
-  "title" : "This website is using Scala!",
+  "title" : "This website is using Scala and the framewok Liftweb!",
   "layout" :"mid-col",
   "category" : "sticker",
   "startingDate" : "",
@@ -369,4 +369,3 @@
   "location": "Paris",
   "type" : "infos"
 } *
-

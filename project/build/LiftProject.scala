@@ -10,6 +10,7 @@ class LiftProject(info: ProjectInfo) extends DefaultWebProject(info) with bees.R
     "net.liftweb" %% "lift-webkit" % liftVersion % "compile->default",
     "net.liftweb" %% "lift-mapper" % liftVersion % "compile->default",
 	"net.liftweb" %% "lift-mongodb-record" % liftVersion % "compile->default",
+	"net.liftweb" %% "lift-json" % liftVersion % "compile->default",
 	"com.foursquare" %% "rogue" % "1.0.13",
 	"org.eclipse.jetty" % "jetty-webapp"  % "7.0.1.v20091125" % "test->default",
 	"org.ccil.cowan.tagsoup" % "tagsoup" % "1.2",
