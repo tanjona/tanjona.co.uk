@@ -369,3 +369,71 @@
   "location": "Paris",
   "type" : "infos"
 } *
+
+
+{
+  "activities" : 
+	[
+		{
+			"content" : "",
+			"tools" : ""
+		}
+	],
+  "title" : "I'm a French citizen",
+  "layout" :"vous n'auriez pas une baguette ?",
+  "category" : "aboutMe",
+  "startingDate" : "",
+  "endingDate" : "",
+  "pictureCompany" : "/images/francais.jpg",
+  "websiteCompany" : "",
+  "company" : "",
+  "position" : "",
+  "user" : "",
+  "location": "France",
+  "type" : "infos"
+} *
+
+{
+  "activities" : 
+	[
+		{
+			"content" : "",
+			"tools" : ""
+		}
+	],
+  "title" : "I'm originally from Madagascar",
+  "layout" :"Yes, no Lion no Penguin !",
+  "category" : "aboutMe",
+  "startingDate" : "",
+  "endingDate" : "",
+  "pictureCompany" : "/images/baobab.jpg",
+  "websiteCompany" : "",
+  "company" : "",
+  "position" : "",
+  "user" : "",
+  "location": "Madagascar",
+  "type" : "infos"
+} *
+
+{
+  "activities" : 
+	[
+		{
+			"content" : "",
+			"tools" : ""
+		}
+	],
+  "title" : "Recenlty moved to the UK",
+  "layout" :"Red phone both, fish&chips and Tea",
+  "category" : "aboutMe",
+  "startingDate" : "",
+  "endingDate" : "",
+  "pictureCompany" : "/images/moving.jpg",
+  "websiteCompany" : "",
+  "company" : "",
+  "position" : "",
+  "user" : "",
+  "location": "UK",
+  "type" : "infos"
+} *
+

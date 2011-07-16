@@ -66,6 +66,17 @@ package code {
 					)
 				)
 			}
+			
+			def aboutme(xhtml: NodeSeq): NodeSeq =
+			{
+				val aboutMeDocs = CvObjectDoc  where (_.category eqs "aboutMe") fetch ()
+					aboutMeDocs.flatMap((exp: CvObjectDoc) => bind ("e", xhtml, 
+				           "title" -> exp.title,
+							"desc" -> exp.layout,
+				 		   "image" -> <img src={exp.pictureCompany.toString} width="140" height="130"></img>
+						)
+					)
+			}
 		}
 	}
 }

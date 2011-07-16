@@ -36,3 +36,42 @@
 			}
 	 	]
 }*
+
+{
+	 "lastname" :"Pereira",
+	 "firstname" :"Michaël",
+	 "photo" :"/images/profil/pereira.jpg",
+	 "desc " :"Software engineer in New York (February 2012)",
+	 "email" :"mpereir1@stevens.edu",
+	 "adress" :"",
+	 "town" :"",
+	 "phone" :"+201 855 9607,",
+	 "urlPerso": "",
+	 "socials" : 
+		[
+			{
+				"name":"facebook",
+				"id":""
+			},
+			{
+				"name":"twitter",
+				"id":""
+			},
+			{
+				"name":"youtube",
+				"id":""
+			},
+			{
+				"name":"google",
+				"id":""
+			},
+			{
+				"name":"linkedin",
+				"id":""
+			},
+			{
+				"name":"github",
+				"id" : ""
+			}
+	 	]
+}*

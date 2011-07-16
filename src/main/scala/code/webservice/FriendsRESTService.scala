@@ -26,11 +26,7 @@ package code {
 						 ("id" -> s.id.toString))})
 			}
 			serve {
-				
-				case "api" :: "user" :: "all" :: _ JsonGet _ =>  JArray(jsonFriend)
-				
-					
-				
+				case "api" :: "user" :: "all" :: _ JsonGet _ =>  JArray(jsonFriend)			
 			}
 		}
 	}
