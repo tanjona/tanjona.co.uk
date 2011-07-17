@@ -7,72 +7,38 @@
 <body class="lift:content_id=main">
 	<div id="main" class="ten-col no-center-border lift:surround?with=guardian;at=content">	
 		<h1>
-			<a href="#" class="link-text">behind my web site !</a>
+			<a href="#" class="link-text">How it's working here!</a>
 		</h1>
 		<div class="main_image">
-			<img src="banner1.jpg" alt="" />
+			<img src="/images/about/scala.png" alt="" height="356" width="498" />
 			<div class="desc">
 				<a href="#" class="collapse">Close Me!</a>
 				<div class="block">
-					<h2>Title</h2>
-					<small>Date</small>
-					<p>Copy</p>
+						<h2>Scala</h2>
+						<small>Scala is a JVM based language</small>
+						<a href="http://www.scala-lang.org">
+							<p>
+								Scala is Unifier (cf: Martin Odersky), It gather Functional and Oriented Object Programming in lightweight 	syntax using a strong static typing
+							</p>
+						</a>
 				</div>
 			</div>
 		</div>
 
-		<div class="image_thumb">
+		<div class="image_thumb lift:about.aboutinfos">
 			<ul>
-				<li>
-					<a href="banner1.jpg"><img src="banner1_thumb.jpg" alt="Image Name" /></a>
+				<li class="infosAbout">
+					<a id="thumb"><img width="48" height="36"/></a>
 					<div class="block">
-						<h2>Title</h2>
-						<small>Date</small>
-						<p>Copy</p>
+						<h2>Title content here !</h2>
+						<small>desc content here !</small>
+						<a><p>Copy content here !</p></a>
 					</div>
 				</li>
 			</ul>
 		</div>	
+		<tail><script type="text/javascript" src="/js/about.js"></script></tail>
 	</div>
-	<script>
-	(function (){
-		$(".main_image .desc").show(); //Show Banner
-		$(".main_image .block").animate({ opacity: 0.85 }, 1 ); //Set Opacity
-
-		$(".image_thumb ul li:first").addClass('active'); //Add the active class (highlights the very first list item by default)
-		$(".image_thumb ul li").click(function(){
-			//Set Variables
-			var imgAlt = $(this).find('img').attr("alt"); //Get Alt Tag of Image
-			var imgTitle = $(this).find('a').attr("href"); //Get Main Image URL
-			var imgDesc = $(this).find('.block').html();  //Get HTML of the "block" container
-			var imgDescHeight = $(".main_image").find('.block').height(); //Find the height of the "block"
-
-			if ($(this).is(".active")) {  //If the list item is active/selected, then...
-				return false; // Don't click through - Prevents repetitive animations on active/selected list-item
-				} else { //If not active then...
-					//Animate the Description
-					$(".main_image .block").animate({ opacity: 0, marginBottom: -imgDescHeight }, 250 , function() { //Pull the block down (negative bottom margin of its own height)
-						$(".main_image .block").html(imgDesc).animate({ opacity: 0.85,  marginBottom: "0" }, 250 ); //swap the html of the block, then pull the block container back up and set opacity
-						$(".main_image img").attr({ src: imgTitle , alt: imgAlt}); //Switch the main image (URL + alt tag)
-					});
-				}
-				//Show active list-item
-				$(".image_thumb ul li").removeClass('active'); //Remove class of 'active' on all list-items
-				$(this).addClass('active');  //Add class of 'active' on the selected list
-				return false; 
-
-				}) .hover(function(){ //Hover effects on list-item 
-					$(this).addClass('hover'); //Add class "hover" on hover 
-				}, function() {
-					$(this).removeClass('hover'); //Remove class "hover" on hover out
-				});
-				
-				$("a.collapse").click(function(){
-				    $(".main_banner .block").slideToggle(); //Toggle the description (slide up and down)
-				    $("a.collapse").toggleClass("show"); //Toggle the class name of "show" (the hide/show tab)
-				});
-		})()
-		</script>
-			</body>
-			</html>
+</body>
+</html>
 

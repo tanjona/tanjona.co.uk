@@ -17,7 +17,8 @@ package code {
 				Thread.sleep(randomLong(5 seconds))
 				
 			    experienceDocs.flatMap((exp: CvObjectDoc) => bind ("e", xhtml, 
-			           "title" -> exp.title, 
+			           "title" -> exp.title,
+			 		   "dates" -> <span class="date">{exp.startingDate.toString} - {exp.endingDate.toString} </span>,
 			           "activities" -> exp.activities.value.flatMap((act:Activity) => bindActivities(act))
 					)
 				)	
@@ -48,7 +49,7 @@ package code {
 			
 			def bindActivities(act:Activity): NodeSeq =
 				<li class="bullet">
-					<a href="#" class="link-text"> {act.content }</a> <br/> <b>{act.tools}</b>
+					<span class="link-text"> {act.content }</span> <br/> <b style="font-size:12px">{act.tools}</b>
 				</li>
 			
 			
@@ -61,7 +62,7 @@ package code {
 				educationDocs.flatMap((exp: CvObjectDoc) => bind ("e", xhtml, 
 			           "title" -> exp.title,
 						AttrBindParam("link",exp.websiteCompany.toString,"href"),
-			 		   "image" -> <img src={exp.pictureCompany.toString} width="140" height="84"></img>,
+			 		   "image" -> <img src={exp.pictureCompany.toString} width="140" height="84"></img>,					
 			           "activities" -> exp.activities.value.flatMap((act:Activity) => bindActivities(act))
 					)
 				)
@@ -90,7 +91,7 @@ package code {
 			
 			def bindActivitiesLike(act:Activity): NodeSeq =
 				<li class="l1 news">
-					<a href="" class="link-text">{act.content}</a>
+					<span class="link-text">{act.content}</span>
 				</li>
 			
 		}

@@ -118,7 +118,7 @@
 			"tools" : "IGN API"
 		},
 		{
-			"content" : "demo onlie: http://tanjona.co.uk/static/index",
+			"content" : "demo online: http://tanjona.co.uk/friend/index",
 			"tools" : ""
 		}
 	],
@@ -445,11 +445,11 @@
 			"tools" : ""
 		},
 		{
-			"content" : "To write code which can be reuse at will",
+			"content" : "To write reusable code",
 			"tools" : ""
 		},	
 		{
-			"content" : "Learn it, Try it & Share it",
+			"content" : "Learn it, Use it & Share it",
 			"tools" : ""
 		}	
 	],
@@ -460,6 +460,94 @@
   "endingDate" : "",
   "pictureCompany" : "",
   "websiteCompany" : "",
+  "company" : "",
+  "position" : "",
+  "user" : "",
+  "location": "UK",
+  "type" : "infos"
+} *
+
+{
+  "activities" : 
+	[
+		{
+			"content" : "Scala is Unifier (cf: Martin Odersky), It gather Functional and Oriented Object Programming in lightweight syntax using a strong static typing",
+			"tools" : "http://www.scala-lang.org"
+		}	
+	],
+  "title" : "Scala",
+  "layout" :"/images/about/scala_thumb.png",
+  "category" : "aboutSite",
+  "startingDate" : "",
+  "endingDate" : "",
+  "pictureCompany" : "/images/about/scala.png",
+  "websiteCompany" : "Scala is a JVM based language",
+  "company" : "",
+  "position" : "",
+  "user" : "",
+  "location": "UK",
+  "type" : "infos"
+} *
+
+{
+  "activities" : 
+	[
+		{
+			"content" : "Lift is powerfull scala web framework , It provides everything what a web site should be :secure, scalable and easy to use",
+			"tools" : "http://seventhings.liftweb.net/"
+		}
+	],
+  "title" : "Lift Web",
+  "layout" :"/images/about/lift_thumb.jpg",
+  "category" : "aboutSite",
+  "startingDate" : "",
+  "endingDate" : "",
+  "pictureCompany" : "/images/about/lift.jpg",
+  "websiteCompany" : "I'm currently using 10% of Lift capacity :o ",
+  "company" : "",
+  "position" : "",
+  "user" : "",
+  "location": "UK",
+  "type" : "infos"
+} *
+
+{
+  "activities" : 
+	[
+		{
+			"content" : "MongoDB completely integrate into Lift, I m currently using lift-mongo record and Rogue(a Type-Safe Scala DSL for querying MongoDB)",
+			"tools" : "http://www.mongodb.org/"
+		}
+	],
+  "title" : "MongoDB",
+  "layout" :"/images/about/mongodb_thumb.png",
+  "category" : "aboutSite",
+  "startingDate" : "",
+  "endingDate" : "",
+  "pictureCompany" : "/images/about/mongodb.jpg",
+  "websiteCompany" : "The next step is about updating issue and sharding",
+  "company" : "",
+  "position" : "",
+  "user" : "",
+  "location": "UK",
+  "type" : "infos"
+} *
+
+{
+  "activities" : 
+	[
+		{
+			"content" : "Flex is flash framework to develop RIA ,Here in the \"Friends\" section I'm using Papervision3d to render the 3d.",
+			"tools" : "http://www.adobe.com/fr/products/flex/"
+		}
+	],
+  "title" : "Flex",
+  "layout" :"/images/about/flex_thumb.png",
+  "category" : "aboutSite",
+  "startingDate" : "",
+  "endingDate" : "",
+  "pictureCompany" : "/images/about/flex.jpg",
+  "websiteCompany" : "Check out the last Flex SDK, 4.5 is brillant !",
   "company" : "",
   "position" : "",
   "user" : "",
