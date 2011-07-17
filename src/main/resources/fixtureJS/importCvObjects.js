@@ -308,7 +308,19 @@
   "activities" : 
 	[
 		{
-			"content" : "",
+			"content" : "This web site is work in progress !",
+			"tools" : ""
+		},
+		{
+			"content" : "This website is using Scala and the framewok Liftweb!",
+			"tools" : ""
+		},
+		{
+			"content" : "All the content is provide by a MongoDB storage!",
+			"tools" : ""
+		},
+		{
+			"content" : "I am looking for High tech position !",
 			"tools" : ""
 		}
 	],
@@ -325,51 +337,6 @@
   "location": "Paris",
   "type" : "infos"
 } *
-
-{
-  "activities" : 
-	[
-		{
-			"content" : "",
-			"tools" : ""
-		}
-	],
-  "title" : "All the content is provide by a MongoDB storage!",
-  "layout" :"mid-col",
-  "category" : "sticker",
-  "startingDate" : "",
-  "endingDate" : "",
-  "pictureCompany" : "",
-  "websiteCompany" : "",
-  "company" : "",
-  "position" : "",
-  "user" : "",
-  "location": "Paris",
-  "type" : "infos"
-} *
-
-{
-  "activities" : 
-	[
-		{
-			"content" : "",
-			"tools" : ""
-		}
-	],
-  "title" : "I am looking for High tech position !",
-  "layout" :"mid-col",
-  "category" : "sticker",
-  "startingDate" : "",
-  "endingDate" : "",
-  "pictureCompany" : "",
-  "websiteCompany" : "",
-  "company" : "",
-  "position" : "",
-  "user" : "",
-  "location": "Paris",
-  "type" : "infos"
-} *
-
 
 {
   "activities" : 

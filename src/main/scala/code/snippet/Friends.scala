@@ -12,16 +12,24 @@ package code {
 			def tanjonainfos (xhtml: NodeSeq) : NodeSeq = 
 			{		
 					val tanjonaDoc = FriendDoc where (_.firstname eqs "Tanjona") fetch()
-					tanjonaDoc(0).socials.value.
-					flatMap(p => bind("friend", xhtml,
+					tanjonaDoc.flatMap (d => 
+						d.socials.value.flatMap(
+								p => bind("friend", xhtml,
 						  			  "title" -> p.name,
+									  AttrBindParam("alt",p.name.toString,"alt"),
 						   			  AttrBindParam("link",Props.get(p.name + ".url", "") + p.id.toString,"href"),
 						 			  AttrBindParam("img",Props.get("social.folder", "")+ p.name.toString + Props.get(p.name +".image.format", ".jpg"), "src"))			
+						)
 					)
 			}
+			
 			def stickerNews = {
 				val newsDoc =  CvObjectDoc where (_.category eqs "sticker") fetch()
-				".list-item *" #> newsDoc.map(d => ".link *" #> d.title)
+				".list-item *" #> newsDoc.flatMap{
+					d =>  d.activities.value.map { 
+						s =>".link *" #> s.content
+					}
+				}
 			}
 		}
 	}
