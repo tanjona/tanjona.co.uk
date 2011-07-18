@@ -470,7 +470,7 @@
   "startingDate" : "",
   "endingDate" : "",
   "pictureCompany" : "/images/about/lift.jpg",
-  "websiteCompany" : "I'm currently using 10% of Lift capacity :o ",
+  "websiteCompany" : "I'm currently using less than 20% of Lift capacity :o ",
   "company" : "",
   "position" : "",
   "user" : "",

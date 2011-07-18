@@ -7,7 +7,23 @@
 <body class="lift:content_id=main">
 	<div id="main" class="ten-col no-center-border lift:surround?with=guardian;at=content">	
 		<h2>Lift experimentation</h2>
-		 Coming soon !	
+		 
+		<h3> Comet Actor Helloworld ! <br/>
+			Use 2 differents browser to see what's happen when you type in the Chat (firefox & Chrome for example)
+		</h3>
+		<div style="margin: 12px;padding: 10px border: 1px solid grey">
+			<ul class="chat lift:comet?type=Chat">
+			  <li class="chat">Line 1</li>
+			  <li class="clearable">Line 2</li>
+			  <li class="clearable">Line 3</li>
+			</ul>
+
+			<form class="lift:Form.ajax">
+			  <input class="lift:ChatIn" id="chat_in">
+			  <input type="submit" value="Chat">
+			</form>
+		  </div>
+	
 	</div>
 </body>
 </html>
