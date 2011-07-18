@@ -14,7 +14,7 @@ package code {
 			{			
 				val experienceDocs = CvObjectDoc where (_.category eqs "experience") fetch()
 				
-				Thread.sleep(randomLong(5 seconds))
+				Thread.sleep(randomLong(2 seconds))
 				
 			    experienceDocs.flatMap((exp: CvObjectDoc) => bind ("e", xhtml, 
 			           "title" -> exp.title,
@@ -26,7 +26,7 @@ package code {
 			
 			
 			def staticheader(xhtml: NodeSeq): NodeSeq = {		
-				Thread.sleep(randomLong(5 seconds))
+				Thread.sleep(randomLong(2 seconds))
 				bind ("e", xhtml, "static" ->
 						<li class="pixie green">
 							<div class="caption">
@@ -57,7 +57,7 @@ package code {
 			{
 				val educationDocs = CvObjectDoc  where (_.category eqs "education") fetch ()
 				
-				Thread.sleep(randomLong(5 seconds))
+				Thread.sleep(randomLong(2 seconds))
 				
 				educationDocs.flatMap((exp: CvObjectDoc) => bind ("e", xhtml, 
 			           "title" -> exp.title,

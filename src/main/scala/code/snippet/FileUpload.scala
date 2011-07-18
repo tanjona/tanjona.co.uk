@@ -6,6 +6,7 @@ import net.liftweb.http.{FileParamHolder, SHtml}
 import SHtml._
 import net.liftweb.util._
 import net.liftweb.http.js.JsCmds.Alert
+import net.liftweb.http.js._
 import net.liftweb.common._
 import java.util.Date
 import code.lib._
@@ -14,7 +15,7 @@ import Helpers._
 class FileUpload {
 	def fileUploadForm(form:NodeSeq) : NodeSeq = {
 		var fileHolder: Box[FileParamHolder] = Empty
-
+	 	val crawl = new NaturalCrawl
 		def handleFile() = {
 			// Do something with the file.
 			printBox(fileHolder)
@@ -23,13 +24,15 @@ class FileUpload {
 				    (holder.length, holder.mimeType) match {
 					 case (length, _) if length > 50000 => 	Alert("file too large :" + length)
 					 case (_, mime) if !authorizedList.contains(mime) => 	Alert("type file not supported :" + mime)
-					 case (_,_) => Alert(holder.mimeType +" - " + holder.length + ": well done!")
+					 case (_,_) =>
+					 	val lines = scala.io.Source.fromInputStream(holder.fileStream).mkString
+						val blockLines = lines.split("\\n")
+						val result = blockLines.map(n => crawl.getFollowers(n))
+						//Alert( result.reduceLeft[(String)]( (l , r) => l + "\n" + r))
+						val nodeList = result.map( elem => <li> {elem} </li>) 
+						
+						JsCmds.SetHtml("followers", <ul class="followers"> {nodeList}</ul>)
 					}
-					//val lines = scala.io.Source.fromInputStream(holder.fileStream).mkString
-					 
-					//val blockLines = lines.split("\\n")
-					//blockLines.map(n => printYellow(n))
-					//Alert(holder.mimeType +" - " + holder.length + ": well done!")
 				}
 			} openOr {
 				Alert("Well *that* upload failed...")

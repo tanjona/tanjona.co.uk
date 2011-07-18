@@ -44,6 +44,19 @@ package code {
 				}
 			}
 			
+			def getFollowers(url:String) = {
+				
+				parseUrl(url);
+				try {
+					val res = (xml \\ "a").filter(a => (a \ "@href").text.endsWith("followers"))(0).text
+					val nbr =res.substring(0,res.trim.indexOf( "F")).trim
+					url+";"+nbr
+				}
+					catch {
+						case e => (url + " error")
+					}
+			}
+			
 			def mainTask(url: String) = {
 				var tmp = ""
 				try {
