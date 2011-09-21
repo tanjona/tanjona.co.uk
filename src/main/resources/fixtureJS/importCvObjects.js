@@ -308,7 +308,7 @@
   "activities" : 
 	[
 		{
-			"content" : "This web site is work in progress !",
+			"content" : "This web site is work in progress!",
 			"tools" : ""
 		},
 		{
@@ -320,7 +320,7 @@
 			"tools" : ""
 		},
 		{
-			"content" : "I am looking for High tech position !",
+			"content" : "I am looking for High tech position!",
 			"tools" : ""
 		}
 	],
@@ -347,7 +347,7 @@
 		}
 	],
   "title" : "I'm a French citizen",
-  "layout" :"vous n'auriez pas une baguette ?",
+  "layout" :"vous n'auriez pas une baguette?",
   "category" : "aboutMe",
   "startingDate" : "",
   "endingDate" : "",
@@ -369,7 +369,7 @@
 		}
 	],
   "title" : "I'm originally from Madagascar",
-  "layout" :"Yes, no Lion no Penguin !",
+  "layout" :"Yes, no Lion no Penguin!",
   "category" : "aboutMe",
   "startingDate" : "",
   "endingDate" : "",
@@ -514,7 +514,7 @@
   "startingDate" : "",
   "endingDate" : "",
   "pictureCompany" : "/images/about/flex.jpg",
-  "websiteCompany" : "Check out the last Flex SDK, 4.5 is brillant !",
+  "websiteCompany" : "Check out the last Flex SDK. 4.5 is brillant!",
   "company" : "",
   "position" : "",
   "user" : "",

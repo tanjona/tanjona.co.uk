@@ -4,16 +4,12 @@ package bootstrap.liftweb
 
 import java.util.Locale
 import javax.mail.{Authenticator, PasswordAuthentication}
-import net.liftweb.mongodb._
 import net.liftweb.util._
 import net.liftweb.common._
 import net.liftweb.http._
 import net.liftweb.http.provider._
 import net.liftweb.sitemap._
 import net.liftweb.sitemap.Loc._
-import net.liftweb.mapper._
-import Helpers._
-
 import code.model._
 import code.webservice._
 
@@ -25,13 +21,6 @@ import code.webservice._
 class Boot extends Loggable  {
 	def boot {
 		MongoConfig.init
-		
-		/*val md1 = CvObjectDoc.createRecord
-		  .title("init")
-		  .save
-		val md2 = FriendDoc.createRecord
-		  .firstname("init")
-	  	  .save */
 		
 		LiftRules.addToPackages("code")
 		
@@ -81,10 +70,10 @@ class Boot extends Loggable  {
 		LiftRules.early.append(makeUtf8)
 
 		// What is the function to test if a user is logged in?
-		LiftRules.loggedInTest = Full(() => User.loggedIn_?)
+		//LiftRules.loggedInTest = Full(() => User.loggedIn_?)
 
-		LiftRules.localeCalculator = localeCalculator _
-
+		//LiftRules.localeCalculator = localeCalculator _
+		//LiftRules.localeCalculator = Locale.getDefault
 		configMailer
 		// Use HTML5 for rendering
 		LiftRules.htmlProperties.default.set((r: Req) => new Html5Properties(r.userAgent))

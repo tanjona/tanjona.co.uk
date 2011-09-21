@@ -21,7 +21,6 @@ package code {
 										"h2 *" #> p.title.toString &
 										"small *" #> p.websiteCompany.toString
 										) 
-					
 					 			)	
 			}
 		

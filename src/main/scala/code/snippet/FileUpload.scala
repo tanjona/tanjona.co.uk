@@ -32,6 +32,7 @@ class FileUpload {
 						val nodeList = result.map( elem => <li> {elem} </li>) 
 						
 						JsCmds.SetHtml("followers", <ul class="followers"> {nodeList}</ul>)
+						
 					}
 				}
 			} openOr {

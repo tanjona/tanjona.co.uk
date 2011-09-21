@@ -3,6 +3,7 @@ package comet
 
 import net.liftweb._
 import http._
+import js._
 import actor._
 import util._
 import Helpers._
@@ -23,7 +24,7 @@ class Chat extends CometActor with CometListener {
   }
 
   // render the component
-  def render = ClearClearable & "li *" #> msgs
+  def render = ClearClearable & "li *" #> msgs 
 }
 
 
@@ -41,6 +42,7 @@ object ChatServer extends LiftActor with ListenerManager {
     case s: String => {
       msgs = (msgs :+ s.trim).filter(_.length > 0).takeRight(20)
       updateListeners()
+	  
     }
   }
 }

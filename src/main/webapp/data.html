@@ -8,25 +8,24 @@
 <body class="lift:content_id=main">
 	<!-- see more at https://github.com/Shadowfiend/lift-ajax-file-upload-example -->
 	<div id="main" class="ten-col no-center-border lift:surround?with=guardian;at=content">	
-		<h2>Ajax Upload form</h2>
+		
 		<div class="lift:FileUpload.fileUploadForm fileUploadForm">
-			<p>Try uploading a file:</p>
-			<input type="file" />
-			<input type="submit" value="Submit" />
+			<p> must be a plain/text (.txt) <br/>
+				each line must be a twitter account (ex : http://twitter.com/tanjonaJulien)</p>
+			<ul>
+				<li class="upload">
+					<label for="realupload">Upload File: </label>
+					<div class="fakeupload">
+						<input type="text" name="fakeupload" class="input-text" /> <!-- browse button is here as background -->
+					</div>
+					<input type="file" name="upload" id="input-upload" class="input-text" onchange="this.form.fakeupload.value = this.value;" />
+				</li>
+				<li>
+					<input type="submit" value="Submit" class="submit" />
+				</li>
+			</ul>
 		</div>
-		<div style="margin-top:20px">
-		    <lift:Data.data>
-		        <table>
-		            <tr>
-		                <td align="right">basic ajax form, enter your name:</td>
-		                <td><data:user></data:user></td>
-		            </tr>
-		            <tr>
-		                <td colspan="2"><data:submit></data:submit></td>
-		            </tr>
-		        </table>
-		    </lift:Data.data>
-		</div>
+		
 		<div id="followers">
 		</div>
 		<tail><script type="text/javascript" src="/js/fileUpload.js"></script></tail>	

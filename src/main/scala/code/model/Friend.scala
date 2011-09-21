@@ -3,14 +3,9 @@ package code {
 
 		import scala.xml.{NodeSeq, Text}
 
-		import net.liftweb.common._
-		import net.liftweb.util._
-		import net.liftweb.util.Helpers._
-		import net.liftweb.record._
 		import net.liftweb.record.field._
 		import net.liftweb.mongodb._
 		import net.liftweb.mongodb.record._
-		import net.liftweb.mongodb.record.field.MongoPasswordField
 		import net.liftweb.mongodb.record.field._
 		
 		case class Social(name: String, id: String) extends JsonObject[Social] { 
